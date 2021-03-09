@@ -1,0 +1,94 @@
+(*$LIBRARY Test1*)
+(*$IMPORT IEC_61131
+filename: 'C:\Program Files (x86)\CPDevFBD-1.1.4.25d\Biblioteki\IEC 61131-3.lcp'
+version: '0.2.0.1'
+timestamp: '2018-04-16-11:34:43.843'
+fblks: CTD, CTU, CTUD, F_TRIG, R_TRIG, RS, SEMA, SR, TOF, TON, TP
+*)
+(*$IMPORT Basic_blocks
+filename: 'C:\Program Files (x86)\CPDevFBD-1.1.4.25d\Biblioteki\Basic_blocks.lcp'
+version: '0.3.1.0'
+timestamp: '2018-04-16-11:34:45.015'
+funs: RND
+fblks: AMEM, ASWI, BMEM, BSWI, COMP, DEBA, DELS, DFF, DIFR, DIVI, FILT, GENR, JKFF, LIMT, MAT, MIT, PDUR, RAND, RSFF, SQR, SRFF, TFF, TOTI
+*)
+(* GLOBAL VARIABLES *)
+(* USER POUs *)
+PROGRAM Test1
+	VAR_EXTERNAL (*$AUTO*) END_VAR
+	
+	(*VAR_GLOBAL
+		WYNIK: DINT;
+		Variable1Count: DINT := 0;
+		Variable2Count: DINT := 0;
+	END_VAR
+	
+	VAR 
+		Index: DINT;
+		Variable1: DINT := 3;
+		Variable2: DINT := 4;
+	END_VAR
+	
+	IF WYNIK = 0 THEN
+		FOR Index := 1 TO -10 BY -1 DO
+			IF Index MOD 2 = 0 THEN 
+				WYNIK := WYNIK + Variable1;
+				Variable1Count := Variable1Count + 1;
+			ELSE
+				WYNIK := WYNIK + Variable2;
+				Variable2Count := Variable2Count + 1;
+			END_IF
+				
+		END_FOR
+	END_IF    *)
+END_PROGRAM
+
+PROGRAM Test2
+	VAR_EXTERNAL (*$AUTO*) END_VAR
+	
+	(*VAR_GLOBAL
+		WYNIK_TEST2: DINT;
+	END_VAR
+	
+	VAR 
+		Wartosc1_Test2: DINT := 10;
+	END_VAR
+	
+	IF WYNIK_TEST2 = 0 THEN
+		CASE Wartosc1_Test2 OF
+			1, 2:
+				WYNIK_TEST2 := 1 + 2 * 4;
+			3, 4, 5, 6:
+				WYNIK_TEST2 := 3 + 4 + 5 + 6;
+
+			ELSE
+				WYNIK_TEST2 := 15;
+		END_CASE
+	END_IF     *)
+END_PROGRAM
+
+PROGRAM TEST3
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR_GLOBAL
+     WYNIK: LREAL;
+     WARTOSC1: LREAL := 14;
+     WARTOSC2: LREAL := 1;   
+ END_VAR
+ 
+ WYNIK := 1 + WARTOSC1 * 2 - WARTOSC2 / (1 + 3 * (2 + 3 ** 4)) + (123 MOD 50 * (4 + 12.5) / 4) + (23 / 5 / 6);
+
+END_PROGRAM
+
+FUNCTION ZERO: DINT  
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+    WYNIK := 0;
+END_FUNCTION
+
+(*$TASKS 
+.TASK TASK
+.LOOPPARAM 0 200
+TEST3
+.END_TASK
+*)
+(*$END_LIBRARY*)

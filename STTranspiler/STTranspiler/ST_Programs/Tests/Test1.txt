@@ -1,0 +1,27 @@
+﻿PROGRAM Test1
+	VAR_EXTERNAL (*$AUTO*) END_VAR
+	
+	VAR_GLOBAL
+		WYNIK: DINT;
+		Variable1Count: DINT := 0;
+		Variable2Count: DINT := 0;
+	END_VAR
+	
+	VAR 
+		Index: DINT;
+		Variable1: DINT := 3;
+		Variable2: DINT := 4;
+	END_VAR
+	
+	IF WYNIK = 0 THEN
+		FOR Index := 1 TO -10 BY -1 DO
+			IF Index MOD 2 = 0 THEN 
+				WYNIK := WYNIK + Variable1;
+				Variable1Count := Variable1Count + 1;
+			ELSE
+				WYNIK := WYNIK + Variable2;
+				Variable2Count := Variable2Count + 1;
+			END_IF				
+		END_FOR
+	END_IF
+END_PROGRAM

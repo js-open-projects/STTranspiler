@@ -1,0 +1,10 @@
+PROGRAM ST__invalid_input_2
+	VAR
+		Wartosc1: DINT := 1;
+		Wartosc2: DINT := 10;
+		Wartosc3: DINT;
+	END_VAR
+	
+	Wartosc3 := Wartosc1 MOD Wartosc2;
+	
+END_PROGRAM

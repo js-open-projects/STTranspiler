@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CPDEV version="1.0">
+  <PROJECT name="Test1">
+    <METRIC>
+      <COMPANY><![CDATA[]]></COMPANY>
+      <MANAGER><![CDATA[]]></MANAGER>
+      <VERSION><![CDATA[]]></VERSION>
+      <SUBJECT><![CDATA[]]></SUBJECT>
+      <CREATED year="2019" month="6" day="13" hour="20" minutes="31" seconds="58" milisec="964" />
+    </METRIC>
+    <OPTIONS>
+      <PV value="00000056" />
+      <II value="00000038" />
+      <CPVis used="0" />
+      <LC year="2019" month="6" day="22" hour="19" minutes="2" seconds="44" milisec="740" />
+      <LCF>
+        <ABSOLUTE>C:\Program Files (x86)\CPDevFBD-1.1.4.25d\VM\VM-Praxis.xml</ABSOLUTE>
+        <APPVARS>$VMsDir\VM-Praxis.xml</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD-1.1.4.25d\VM\VM-Praxis.xml</ENVVARS>
+      </LCF>
+      <CREATOR>1.1.4.25</CREATOR>
+      <LASTSAVEDWITH>1.1.4.25</LASTSAVEDWITH>
+      <DCP>
+        <ABSOLUTE>E:\Development\Repos\MasterThesis_PRz\pd143887\kod\Tests\Test1\Test1.dcp</ABSOLUTE>
+        <APPVARS>E:\Development\Repos\MasterThesis_PRz\pd143887\kod\Tests\Test1\Test1.dcp</APPVARS>
+        <ENVVARS>E:\Development\Repos\MasterThesis_PRz\pd143887\kod\Tests\Test1\Test1.dcp</ENVVARS>
+      </DCP>
+      <XCP>
+        <ABSOLUTE>E:\Development\Repos\MasterThesis_PRz\pd143887\kod\Tests\Test1\Test1.xcp</ABSOLUTE>
+        <APPVARS>E:\Development\Repos\MasterThesis_PRz\pd143887\kod\Tests\Test1\Test1.xcp</APPVARS>
+        <ENVVARS>E:\Development\Repos\MasterThesis_PRz\pd143887\kod\Tests\Test1\Test1.xcp</ENVVARS>
+      </XCP>
+      <HCP>
+        <ABSOLUTE>E:\Development\Repos\MasterThesis_PRz\pd143887\kod\Tests\Test1\Test1.hcp</ABSOLUTE>
+        <APPVARS>E:\Development\Repos\MasterThesis_PRz\pd143887\kod\Tests\Test1\Test1.hcp</APPVARS>
+        <ENVVARS>E:\Development\Repos\MasterThesis_PRz\pd143887\kod\Tests\Test1\Test1.hcp</ENVVARS>
+      </HCP>
+      <CST>
+        <ABSOLUTE>E:\Development\Repos\MasterThesis_PRz\pd143887\kod\Tests\Test1\Test1.cst</ABSOLUTE>
+        <APPVARS>E:\Development\Repos\MasterThesis_PRz\pd143887\kod\Tests\Test1\Test1.cst</APPVARS>
+        <ENVVARS>E:\Development\Repos\MasterThesis_PRz\pd143887\kod\Tests\Test1\Test1.cst</ENVVARS>
+      </CST>
+      <HCPFlags enabled="0" />
+      <OverrideDefaultPaths enabled="0" />
+    </OPTIONS>
+    <LIBRARY>
+      <PKG name="IEC_61131" version="131073" filename="C:\Program Files (x86)\CPDevFBD-1.1.4.25d\Biblioteki\IEC 61131-3.lcp">
+        <CREATED year="2018" month="4" day="16" hour="11" minutes="34" seconds="43" milisec="843" />
+        <APPVARS>$LibDir\IEC 61131-3.lcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD-1.1.4.25d\Biblioteki\IEC 61131-3.lcp</ENVVARS>
+        <IMP name="CTD" type="FBLK" />
+        <IMP name="CTU" type="FBLK" />
+        <IMP name="CTUD" type="FBLK" />
+        <IMP name="F_TRIG" type="FBLK" />
+        <IMP name="R_TRIG" type="FBLK" />
+        <IMP name="RS" type="FBLK" />
+        <IMP name="SEMA" type="FBLK" />
+        <IMP name="SR" type="FBLK" />
+        <IMP name="TOF" type="FBLK" />
+        <IMP name="TON" type="FBLK" />
+        <IMP name="TP" type="FBLK" />
+      </PKG>
+      <PKG name="Basic_blocks" version="196864" filename="C:\Program Files (x86)\CPDevFBD-1.1.4.25d\Biblioteki\Basic_blocks.lcp">
+        <CREATED year="2018" month="4" day="16" hour="11" minutes="34" seconds="45" milisec="15" />
+        <APPVARS>$LibDir\Basic_blocks.lcp</APPVARS>
+        <ENVVARS>%ProgramFiles%\CPDevFBD-1.1.4.25d\Biblioteki\Basic_blocks.lcp</ENVVARS>
+        <IMP name="RND" type="FUN" />
+        <IMP name="AMEM" type="FBLK" />
+        <IMP name="ASWI" type="FBLK" />
+        <IMP name="BMEM" type="FBLK" />
+        <IMP name="BSWI" type="FBLK" />
+        <IMP name="COMP" type="FBLK" />
+        <IMP name="DEBA" type="FBLK" />
+        <IMP name="DELS" type="FBLK" />
+        <IMP name="DFF" type="FBLK" />
+        <IMP name="DIFR" type="FBLK" />
+        <IMP name="DIVI" type="FBLK" />
+        <IMP name="FILT" type="FBLK" />
+        <IMP name="GENR" type="FBLK" />
+        <IMP name="JKFF" type="FBLK" />
+        <IMP name="LIMT" type="FBLK" />
+        <IMP name="MAT" type="FBLK" />
+        <IMP name="MIT" type="FBLK" />
+        <IMP name="PDUR" type="FBLK" />
+        <IMP name="RAND" type="FBLK" />
+        <IMP name="RSFF" type="FBLK" />
+        <IMP name="SQR" type="FBLK" />
+        <IMP name="SRFF" type="FBLK" />
+        <IMP name="TFF" type="FBLK" />
+        <IMP name="TOTI" type="FBLK" />
+      </PKG>
+    </LIBRARY>
+    <POU>
+      <ITEM lang="ST" disabled="0" type="PRG" name="TEST1" editor="CPDev.ST"><![CDATA[PROGRAM Test1
+	VAR_EXTERNAL (*$AUTO*) END_VAR
+	
+	(*VAR_GLOBAL
+		WYNIK: DINT;
+		Variable1Count: DINT := 0;
+		Variable2Count: DINT := 0;
+	END_VAR
+	
+	VAR 
+		Index: DINT;
+		Variable1: DINT := 3;
+		Variable2: DINT := 4;
+	END_VAR
+	
+	IF WYNIK = 0 THEN
+		FOR Index := 1 TO -10 BY -1 DO
+			IF Index MOD 2 = 0 THEN 
+				WYNIK := WYNIK + Variable1;
+				Variable1Count := Variable1Count + 1;
+			ELSE
+				WYNIK := WYNIK + Variable2;
+				Variable2Count := Variable2Count + 1;
+			END_IF
+				
+		END_FOR
+	END_IF    *)
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="TEST2" editor="CPDev.ST"><![CDATA[PROGRAM Test2
+	VAR_EXTERNAL (*$AUTO*) END_VAR
+	
+	(*VAR_GLOBAL
+		WYNIK_TEST2: DINT;
+	END_VAR
+	
+	VAR 
+		Wartosc1_Test2: DINT := 10;
+	END_VAR
+	
+	IF WYNIK_TEST2 = 0 THEN
+		CASE Wartosc1_Test2 OF
+			1, 2:
+				WYNIK_TEST2 := 1 + 2 * 4;
+			3, 4, 5, 6:
+				WYNIK_TEST2 := 3 + 4 + 5 + 6;
+
+			ELSE
+				WYNIK_TEST2 := 15;
+		END_CASE
+	END_IF     *)
+END_PROGRAM]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+      <ITEM lang="ST" disabled="0" type="PRG" name="TEST3" editor="CPDev.ST"><![CDATA[PROGRAM TEST3
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR_GLOBAL
+     WYNIK: LREAL;
+     WARTOSC1: LREAL := 14;
+     WARTOSC2: LREAL := 1;   
+ END_VAR
+ 
+ WYNIK := 1 + WARTOSC1 * 2 - WARTOSC2 / (1 + 3 * (2 + 3 ** 4)) + (123 MOD 50 * (4 + 12.5) / 4) + (23 / 5 / 6);
+
+END_PROGRAM
+
+FUNCTION ZERO: DINT  
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+    WYNIK := 0;
+END_FUNCTION]]><EDITOR><![CDATA[]]></EDITOR></ITEM>
+    </POU>
+    <GLOBAL />
+    <TASK>
+      <ITEM type="TSK" name="TASK" loop_kind="0" interval="200"><![CDATA[TEST3
+]]></ITEM>
+    </TASK>
+  </PROJECT>
+</CPDEV>

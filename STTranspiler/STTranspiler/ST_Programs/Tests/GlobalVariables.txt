@@ -1,0 +1,9 @@
+﻿PROGRAM GlobalVariables
+	VAR_GLOBAL
+		Wartosc1: DINT := 1;
+		Wartosc2: INT := 10;
+		Wartosc3: STRING;
+		Wartosc4: DWORD;
+		Wartosc5: TIME
+	END_VAR	
+END_PROGRAM

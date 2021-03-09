@@ -1,0 +1,21 @@
+﻿PROGRAM Test2
+	VAR_EXTERNAL (*$AUTO*) END_VAR
+
+	VAR_GLOBAL
+		WYNIK_TEST2: DINT;
+	END_VAR
+	
+	VAR 
+		Wartosc1_Test2: DINT := 10;
+	END_VAR
+
+	CASE Wartosc1_Test2 OF
+		1, 2:
+			WYNIK_TEST2 := 1 + 2 * 4;
+		3, 4, 5, 6:
+			WYNIK_TEST2 := 3 + 4 + 5 + 6;
+
+		ELSE
+			WYNIK_TEST2 := 15;
+	END_CASE
+END_PROGRAM

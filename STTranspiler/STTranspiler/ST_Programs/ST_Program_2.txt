@@ -1,0 +1,60 @@
+﻿PROGRAM Drugi
+
+	VAR
+		String1: STRING[10]:= 'ABCD';
+		String2: STRING[10]:= '';
+		Char1: CHAR;
+		WChar1: WCHAR;
+		Z  : LREAL := 10.0;
+	END_VAR
+	Char1:= String1[2]; 
+	
+	String1[3]:= Char1;
+	String1[4]:= 'B';
+	String1[1]:= String1[4];
+	String2:= String1[2];
+	Z := (Z ** 5 ** 1 ** 10 + 10 - 1 ** 25);
+
+	TYPE
+		Traffic_light1: INT (Red:= 1, Amber := 2, Green:= 3):= Green;
+		Painting_colors1: INT (Red:= 1, Yellow:= 2, Green:= 3, Blue:= 4):= Blue;
+	END_TYPE
+	VAR
+		My_Traffic_light1: Traffic_light1;
+	END_VAR
+
+	TYPE
+		Traffic_light: (Red, Amber, Green);
+		Painting_colors: (Red, Yellow, Green, Blue):= Blue;
+	END_TYPE
+	VAR
+		My_Traffic_light: Traffic_light:= Traffic_light#Red;
+		NumberValue: INT;
+	END_VAR
+
+	IF My_Traffic_light = Traffic_light#Amber THEN NumberValue := 1 END_IF
+	IF My_Traffic_light = Traffic_light#Red THEN NumberValue := 1 END_IF
+	IF My_Traffic_light = Traffic_light#Amber THEN NumberValue := 1 END_IF
+	IF My_Traffic_light = Traffic_light#Red THEN NumberValue := 1 END_IF
+
+	TYPE
+		ANALOG_SIGNAL_RANGE:
+			(BIPOLAR_10V,
+			UNIPOLAR_10V);
+
+		ANALOG_DATA: INT (-4095 .. 4095);
+
+		ANALOG_CHANNEL_CONFIGURATION:
+			STRUCT
+				RANGE: ANALOG_SIGNAL_RANGE;
+				MIN_SCALE: ANALOG_DATA;
+				MAX_SCALE: ANALOG_DATA;
+			END_STRUCT
+	END_TYPE
+
+	VAR
+		MODULE_CONFIG: ANALOG_CHANNEL_CONFIGURATION;
+		MODULE_8_CONF: ARRAY [1..8] OF ANALOG_CHANNEL_CONFIGURATION;
+	END_VAR
+
+END_PROGRAM

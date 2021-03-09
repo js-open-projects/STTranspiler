@@ -1,0 +1,15 @@
+﻿PROGRAM TEST3
+ VAR_EXTERNAL (*$AUTO*) END_VAR
+ 
+ VAR_GLOBAL
+     WYNIK: LREAL;
+     WARTOSC1: LREAL := 14;
+     WARTOSC2: LREAL := 1;   
+ END_VAR
+ 
+ WYNIK := 1 + WARTOSC1 * 2 - WARTOSC2 / 
+		(1 + 3 * (2 + 3 ** 4)) + 
+		(123 MOD 50 * (4 + 12.5) / 4) + 
+		(23 / 5 / 6);
+
+END_PROGRAM

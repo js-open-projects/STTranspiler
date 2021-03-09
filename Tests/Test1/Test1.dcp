@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CPDEV version="1.0">
+  <TARGET>
+    <GLOBAL>
+      <VAR LName="WYNIK" PName="Test1.WYNIK" Addr="0000" AdrType="gdlabel" Size="8" Type="LREAL" PType="$DEFAULT.LREAL" VarFlags="00004000" />
+      <VAR LName="WARTOSC1" PName="Test1.WARTOSC1" Addr="0008" AdrType="gdlabel" Size="8" Type="LREAL" PType="$DEFAULT.LREAL" VarFlags="00004000" />
+      <VAR LName="WARTOSC2" PName="Test1.WARTOSC2" Addr="0010" AdrType="gdlabel" Size="8" Type="LREAL" PType="$DEFAULT.LREAL" VarFlags="00004000" />
+    </GLOBAL>
+    <VMACH>
+      <FILE_LOC>C:\Program Files (x86)\CPDevFBD-1.1.4.25d\VM\VM-Praxis.xml</FILE_LOC>
+    </VMACH>
+    <TASKS>
+      <TASK LName="TASK" PName="Test1.TASK" LoopType="0" Cycle="200" CycleUnit="ms" BodyCodeAddres="002d" TaskFlags="00000000" />
+    </TASKS>
+    <MEMORY_MAP Type="code">
+      <file LoadAddr="0" Size="228">Test1.xcp</file>
+      <file_FullName>E:\Development\Repos\MasterThesis_PRz\pd143887\kod\Tests\Test1\Test1.xcp</file_FullName>
+    </MEMORY_MAP>
+    <MEMORY_MAP Type="data">
+      <file LoadAddr="0" Size="96">#dummy</file>
+    </MEMORY_MAP>
+    <MNEMONIC_MAP Type="code">
+:0000| 1C15 0000 08 0000000000000000     | $VMSYS.MCD Test1.WYNIK, #08, #0000000000000000                                  
+:000d| 1C15 0800 08 0000000000002C40     | $VMSYS.MCD Test1.WARTOSC1, #08, #0000000000002C40                               
+:001a| 1C15 1000 08 000000000000F03F     | $VMSYS.MCD Test1.WARTOSC2, #08, #000000000000F03F                               
+:0027|                                   | :?Test1.TASK?TSKSTR                                                             
+:0027| 1C16 0000 3700                    | $VMSYS.CALB #0000, :?Test1.TEST3?INIT                                           
+:002d|                                   | :?Test1.TASK?TSKLOOP                                                            
+:002d| 1C16 0000 6C00                    | $VMSYS.CALB #0000, :?Test1.TEST3?CODE                                           
+:0033| 1C1D 2D00                         | $VMSYS.TRML :?Test1.TASK?TSKLOOP                                                
+:0037|                                   | :?Test1.TEST3?INIT                                                              
+:0037| 1C15 1800 02 0100                 | $VMSYS.MCD ?L?CST014E, #02, #0100                                               
+:003e| 1C15 1A00 02 0200                 | $VMSYS.MCD ?L?CST014F, #02, #0200                                               
+:0045| 1C15 1C00 02 FA00                 | $VMSYS.MCD ?L?CST0150, #02, #FA00                                               
+:004c| 1C15 1E00 02 7B00                 | $VMSYS.MCD ?L?CST0151, #02, #7B00                                               
+:0053| 1C15 2000 02 3200                 | $VMSYS.MCD ?L?CST0152, #02, #3200                                               
+:005a| 1C15 2400 04 00008441             | $VMSYS.MCD ?L?CST0153, #04, #00008441                                           
+:0063| 1C15 2200 02 0400                 | $VMSYS.MCD ?L?CST0154, #02, #0400                                               
+:006a| 1C13                              | $VMSYS.RETURN                                                                   
+:006c|                                   | :?Test1.TEST3?CODE                                                              
+;;;;;|                                   | {B:3!79!1688}                                                                   
+;!!!!|                                   |  ■WYNIK := 1 + WARTOSC1 * 2 - WARTOSC2 / (1 + 3 * (2 + 3 ** 4)) + (123 MOD 50 *…
+;!!!!|                                   |  (4 + 12.5) / 4) + (23 / 5 / 6)■;                                               
+:006c| 1900 3000 1A00                    | $DEFAULT.INT_TO_REAL ?CCT??DEFAULT?REAL?0, ?L?CST014F                           
+:0072| 190D 2800 3000                    | $DEFAULT.REAL_TO_LREAL ?CCT??DEFAULT?LREAL?0, ?CCT??DEFAULT?REAL?0              
+:0078| 032A 3800 0800 2800               | $DEFAULT.MUL ?F?$DEFAULT_MUL0157, WARTOSC1, ?CCT??DEFAULT?LREAL?0               
+:0080| 0412 3400 1E00 2000               | $DEFAULT.MOD ?F?MOD0158, ?L?CST0151, ?L?CST0152                                 
+:0088| 1900 3000 1800                    | $DEFAULT.INT_TO_REAL ?CCT??DEFAULT?REAL?0, ?L?CST014E                           
+:008e| 190D 2800 3000                    | $DEFAULT.REAL_TO_LREAL ?CCT??DEFAULT?LREAL?0, ?CCT??DEFAULT?REAL?0              
+:0094| 012A 4000 2800 3800               | $DEFAULT.ADD ?F?$DEFAULT_ADD015B, ?CCT??DEFAULT?LREAL?0, ?F?$DEFAULT_MUL0157    
+:009c| 1900 3000 1C00                    | $DEFAULT.INT_TO_REAL ?CCT??DEFAULT?REAL?0, ?L?CST0150                           
+:00a2| 190D 2800 3000                    | $DEFAULT.REAL_TO_LREAL ?CCT??DEFAULT?LREAL?0, ?CCT??DEFAULT?REAL?0              
+:00a8| 040A 4800 1000 2800               | $DEFAULT.DIV ?F?$DEFAULT_DIV015E, WARTOSC2, ?CCT??DEFAULT?LREAL?0               
+:00b0| 1900 3000 3400                    | $DEFAULT.INT_TO_REAL ?CCT??DEFAULT?REAL?0, ?F?MOD0158                           
+:00b6| 0329 5000 3000 2400               | $DEFAULT.MUL ?F?$DEFAULT_MUL0160, ?CCT??DEFAULT?REAL?0, ?L?CST0153              
+:00be| 020A 5800 4000 4800               | $DEFAULT.SUB ?F?$DEFAULT_SUB0161, ?F?$DEFAULT_ADD015B, ?F?$DEFAULT_DIV015E      
+:00c6| 1900 3000 2200                    | $DEFAULT.INT_TO_REAL ?CCT??DEFAULT?REAL?0, ?L?CST0154                           
+:00cc| 0409 5400 5000 3000               | $DEFAULT.DIV ?F?$DEFAULT_DIV0163, ?F?$DEFAULT_MUL0160, ?CCT??DEFAULT?REAL?0     
+:00d4| 190D 2800 5400                    | $DEFAULT.REAL_TO_LREAL ?CCT??DEFAULT?LREAL?0, ?F?$DEFAULT_DIV0163               
+:00da| 012A 0000 5800 2800               | $DEFAULT.ADD WYNIK, ?F?$DEFAULT_SUB0161, ?CCT??DEFAULT?LREAL?0                  
+;;;;;|                                   | {E:3!79!1796}                                                                   
+:00e2| 1C13                              | $VMSYS.RETURN                                                                   
+:00e4 
+</MNEMONIC_MAP>
+    <DATA_MAP>
+      <OBJ ObjType="VAR" LName="WYNIK" PName="Test1.WYNIK" Addr="0000" AdrType="gdlabel" Size="8" Type="LREAL" PType="$DEFAULT.LREAL" TypeStatus="build-in type" VFlags="00004000" />
+      <OBJ ObjType="VAR" LName="WARTOSC1" PName="Test1.WARTOSC1" Addr="0008" AdrType="gdlabel" Size="8" Type="LREAL" PType="$DEFAULT.LREAL" TypeStatus="build-in type" VFlags="00004000" />
+      <OBJ ObjType="VAR" LName="WARTOSC2" PName="Test1.WARTOSC2" Addr="0010" AdrType="gdlabel" Size="8" Type="LREAL" PType="$DEFAULT.LREAL" TypeStatus="build-in type" VFlags="00004000" />
+      <OBJ ObjType="TASK" LName="TASK" PName="Test1.TASK" Addr="0000" AdrType="gdlabel" Size="94">
+        <OBJ ObjType="VAR" LName="TEST3_01" PName="Test1.TASK.TEST3_01" Addr="0000" AdrType="rdlabel" CAddr="0000" CAdrType="gdlabel" Size="94" Type="TEST3" PType="Test1.TEST3" TypeStatus="program" VFlags="00000000">
+          <OBJ ObjType="VAR" LName="?L?CST014E" PName="Test1.TASK.TEST3_01.?L?CST014E" Addr="0018" AdrType="rdlabel" CAddr="0018" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" ConstValue="1" />
+          <OBJ ObjType="VAR" LName="?L?CST014F" PName="Test1.TASK.TEST3_01.?L?CST014F" Addr="001a" AdrType="rdlabel" CAddr="001a" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" ConstValue="2" />
+          <OBJ ObjType="VAR" LName="?L?CST0150" PName="Test1.TASK.TEST3_01.?L?CST0150" Addr="001c" AdrType="rdlabel" CAddr="001c" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" ConstValue="250" />
+          <OBJ ObjType="VAR" LName="?L?CST0151" PName="Test1.TASK.TEST3_01.?L?CST0151" Addr="001e" AdrType="rdlabel" CAddr="001e" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" ConstValue="123" />
+          <OBJ ObjType="VAR" LName="?L?CST0152" PName="Test1.TASK.TEST3_01.?L?CST0152" Addr="0020" AdrType="rdlabel" CAddr="0020" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" ConstValue="50" />
+          <OBJ ObjType="VAR" LName="?L?CST0153" PName="Test1.TASK.TEST3_01.?L?CST0153" Addr="0024" AdrType="rdlabel" CAddr="0024" CAdrType="gdlabel" Size="4" Type="REAL" PType="$DEFAULT.REAL" TypeStatus="build-in type" VFlags="00100000" ConstValue="16.5" />
+          <OBJ ObjType="VAR" LName="?L?CST0154" PName="Test1.TASK.TEST3_01.?L?CST0154" Addr="0022" AdrType="rdlabel" CAddr="0022" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00100000" ConstValue="4" />
+          <OBJ ObjType="VAR" LName="?CCT??DEFAULT?LREAL?0" PName="Test1.TASK.TEST3_01.?CCT??DEFAULT?LREAL?0" Addr="0028" AdrType="rdlabel" CAddr="0028" CAdrType="gdlabel" Size="8" Type="LREAL" PType="$DEFAULT.LREAL" TypeStatus="build-in type" VFlags="00000000" />
+          <OBJ ObjType="VAR" LName="?CCT??DEFAULT?REAL?0" PName="Test1.TASK.TEST3_01.?CCT??DEFAULT?REAL?0" Addr="0030" AdrType="rdlabel" CAddr="0030" CAdrType="gdlabel" Size="4" Type="REAL" PType="$DEFAULT.REAL" TypeStatus="build-in type" VFlags="00000000" />
+          <OBJ ObjType="VAR" LName="?F?$DEFAULT_MUL0157" PName="Test1.TASK.TEST3_01.?F?$DEFAULT_MUL0157" Addr="0038" AdrType="rdlabel" CAddr="0038" CAdrType="gdlabel" Size="8" Type="LREAL" PType="$DEFAULT.LREAL" TypeStatus="build-in type" VFlags="00200000" />
+          <OBJ ObjType="VAR" LName="?F?MOD0158" PName="Test1.TASK.TEST3_01.?F?MOD0158" Addr="0034" AdrType="rdlabel" CAddr="0034" CAdrType="gdlabel" Size="2" Type="INT" PType="$DEFAULT.INT" TypeStatus="build-in type" VFlags="00200000" />
+          <OBJ ObjType="VAR" LName="?F?$DEFAULT_ADD015B" PName="Test1.TASK.TEST3_01.?F?$DEFAULT_ADD015B" Addr="0040" AdrType="rdlabel" CAddr="0040" CAdrType="gdlabel" Size="8" Type="LREAL" PType="$DEFAULT.LREAL" TypeStatus="build-in type" VFlags="00200000" />
+          <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV015E" PName="Test1.TASK.TEST3_01.?F?$DEFAULT_DIV015E" Addr="0048" AdrType="rdlabel" CAddr="0048" CAdrType="gdlabel" Size="8" Type="LREAL" PType="$DEFAULT.LREAL" TypeStatus="build-in type" VFlags="00200000" />
+          <OBJ ObjType="VAR" LName="?F?$DEFAULT_MUL0160" PName="Test1.TASK.TEST3_01.?F?$DEFAULT_MUL0160" Addr="0050" AdrType="rdlabel" CAddr="0050" CAdrType="gdlabel" Size="4" Type="REAL" PType="$DEFAULT.REAL" TypeStatus="build-in type" VFlags="00200000" />
+          <OBJ ObjType="VAR" LName="?F?$DEFAULT_SUB0161" PName="Test1.TASK.TEST3_01.?F?$DEFAULT_SUB0161" Addr="0058" AdrType="rdlabel" CAddr="0058" CAdrType="gdlabel" Size="8" Type="LREAL" PType="$DEFAULT.LREAL" TypeStatus="build-in type" VFlags="00200000" />
+          <OBJ ObjType="VAR" LName="?F?$DEFAULT_DIV0163" PName="Test1.TASK.TEST3_01.?F?$DEFAULT_DIV0163" Addr="0054" AdrType="rdlabel" CAddr="0054" CAdrType="gdlabel" Size="4" Type="REAL" PType="$DEFAULT.REAL" TypeStatus="build-in type" VFlags="00200000" />
+        </OBJ>
+      </OBJ>
+    </DATA_MAP>
+    <INFO>
+      <DT_EXPORT year="2019" month="6" day="21" hour="15" minutes="33" seconds="45" milisec="697" />
+      <COMPANY><![CDATA[]]></COMPANY>
+      <MANAGER><![CDATA[]]></MANAGER>
+      <VERSION><![CDATA[]]></VERSION>
+      <CREATED year="2019" month="6" day="13" hour="20" minutes="31" seconds="58" milisec="964" />
+      <PHYSVER value="80" />
+      <LAST_COMPILED year="2019" month="6" day="21" hour="15" minutes="33" seconds="45" milisec="316" />
+    </INFO>
+  </TARGET>
+</CPDEV>
